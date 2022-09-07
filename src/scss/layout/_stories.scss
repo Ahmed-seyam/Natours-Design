@@ -1,0 +1,9 @@
+.section-stories {
+	padding: 10rem;
+	position: relative;
+	overflow: hidden;
+
+	@include respond(tap-port) {
+		padding: 10rem 0;
+	}
+}

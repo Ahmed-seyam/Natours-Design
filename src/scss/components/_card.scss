@@ -1,0 +1,204 @@
+.card {
+	// Functionality
+	perspective: 150rem;
+	-moz-perspective: 150rem;
+	position: relative;
+	height: 53rem;
+	
+	&:hover &__side--front{
+		transform: rotateY(-180deg);
+	}
+
+	&:hover &__side--back{
+		transform: rotateY(0);
+	}
+	&__side {
+		overflow: hidden;
+		transition: transform .8s ease;
+		height: 53rem;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		backface-visibility: hidden;
+		border-radius: 3px;
+		box-shadow: 0 1.5rem 4rem rgba($darkblack, .15);
+		&--front {
+			
+		}
+
+		&--back {
+			transform: rotateY(180deg);
+
+			&-1 {
+				background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
+			}
+
+			&-2 {
+				background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+			}
+
+			&-3 {
+				background-image: linear-gradient(to right bottom, $color-teriary-light, $color-teriary-dark);
+			}
+		}
+	}
+	
+
+	// Front side styling
+	&__picture {
+		background-size: cover;
+		height: 23rem;
+		background-blend-mode: screen;
+		-webkit-clip-path: polygon(0 0 , 100% 0, 100% 85%, 0 100% );
+		clip-path: polygon(0 0 , 100% 0, 100% 85%, 0 100% );
+		&--1 {
+			background-image: linear-gradient(to right, $color-secondary-light,$color-secondary-dark), 
+			url('./../../public/img/nat-5.jpg');
+		}
+		&--2 {
+			background-image: linear-gradient(to right, $color-primary-light,$color-primary-dark), 
+			url('./../../public/img/nat-6.jpg');
+		}
+		&--3 {
+			background-image: linear-gradient(to right, $color-teriary-light,$color-teriary-dark), 
+			url('./../../public/img/nat-4.jpg');
+		}
+
+	}
+	&__heading {
+		font-size: 2.8rem;
+		font-weight: 300;
+		text-transform: uppercase;
+		color: $colorwhite;
+		position: absolute;
+		top: 12rem;
+		right: 2rem;
+		width: 75%;
+		text-align: right;
+	}
+
+	&__heading--span {
+		padding: 1rem 1.5rem;
+		box-decoration-break: clone;
+		-webkit-box-decoration-break: clone;
+		&-1 {
+			background-image: linear-gradient(to right bottom, rgba($color-secondary-light,.85), rgba($color-secondary-dark,.85));
+		}
+		&-2 {
+			background-image: linear-gradient(to right bottom, rgba($color-primary-light,.85), rgba($color-primary-dark,.85));
+		}
+		&-3 {
+			background-image: linear-gradient(to right bottom, rgba($color-teriary-light,.85), rgba($color-teriary-dark,.85));
+		}
+	}
+
+	&__details{
+
+		ul {
+			list-style: none;
+			width: 80%;
+			text-align: center;
+			font-size: 1.5rem;
+			padding: 1rem;
+			margin: 0 auto;
+			text-transform: capitalize;
+			li {
+				padding: 1.3rem;
+				&:not(:last-child) {
+				border-bottom: 1px solid $color-grey-light-2;
+				}
+			}
+		}
+	}
+
+	// Back Side Style
+	&__cta {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 90%;
+		text-align: center;
+	}
+
+	&__price-box {
+		color: $colorwhite;
+		text-align: center;
+		margin-bottom: 8rem;
+	}
+
+	&__price-only {
+		font-size: 1.4rem;
+		text-transform: uppercase;
+	}
+	&__price-value {
+		font-size: 6rem;
+		font-weight: 100;
+	}
+	/* 
+		Start Media Query ************************************************************************************
+	*/
+	@media only screen and (max-width: 56.25em) , only screen and (hover: none) {
+		height: auto;
+		box-shadow: 0 1.5rem 4rem rgba($darkblack, .15);
+		background-color: #fff;
+
+		&:hover &__side--front{
+			transform: rotateY(0);
+		}
+	
+	&__side {
+		height: auto;
+		border-radius: 3px;
+		position: relative;
+		box-shadow: none;
+		
+		&--front {
+			
+		}
+
+		&--back {
+			transform: none;
+			clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+			&-1 {
+				background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
+			}
+
+			&-2 {
+				background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+			}
+
+			&-3 {
+				background-image: linear-gradient(to right bottom, $color-teriary-light, $color-teriary-dark);
+			}
+			.btn {
+				margin-top: 1rem !important;
+			}
+		}
+	}
+	
+
+	
+
+	// Back Side Style
+	&__cta {
+		position: relative;
+		top: 0;
+		left: 0;
+		transform: translate(0);
+		width: 100%;
+		padding: 6rem 4rem 5rem;
+		
+	}
+
+	&__price-box {
+		margin-bottom: 0rem;
+	}
+
+	
+	&__price-value {
+		font-size: 6rem;
+	}
+	}
+}

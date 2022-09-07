@@ -1,0 +1,101 @@
+.form {
+
+	&__group:not(:last-child) {
+		margin-bottom: 2rem;
+	}
+
+	
+
+	&__input {
+		font-size: 1.5rem;
+		padding: 1.5rem 2rem;
+		border-radius: 2px;
+		background-color: rgba($colorwhite, .5);
+		border: none;
+		font-family: inherit;
+		border-bottom: 3px solid transparent;
+		width: 90%;
+		display: block;
+		color: inherit;
+		transition: all .3s;
+		position: relative;
+		z-index: 3;
+		@include respond(tap-port) {
+			width: 100%;
+		}
+		&:focus {
+			outline: none;
+			box-shadow: 0 1rem 2rem rga($darkblack, .1);
+			border-bottom: 3px solid $color-primary-light;
+		}
+
+		&::-webkit-input-placeholder {
+			color: $color-grey-dark-2;
+		}
+		
+		
+
+		&:focus:invalid {
+			border-bottom: 3px solid $color-secondary-dark;
+		
+		}
+	}
+
+	&__label {
+		display: block;
+		margin-top: .7rem;
+		font-size: 1.2rem; 
+		font-weight: 700;
+		margin-left: 2rem;
+		position: relative;
+		transition: all .3s ease-in-out;
+		transform: translateY(0);
+		opacity: 1;
+	}
+
+	&__input:placeholder-shown + &__label{
+		transform: translateY(-3rem);
+		opacity: 0;
+	}
+	&__radio-group {
+		width: 50%;
+		display: inline-block;
+		@include respond(tap-port) {
+			width: 100%;
+			margin-bottom: 2rem;
+		}
+	}
+	&__radio-input {
+		width: 0;
+		height: 0;
+	}
+
+	&__radio-label {
+		cursor: pointer;
+		font-size: $default-font-size;
+		text-transform: capitalize;
+		display: inline-block;
+		height: 3rem;
+	}
+
+	&__radio-button {
+		background-color: $colorwhite;
+		background: content-box;
+		width: 3rem;
+		height: 3rem;
+		border-radius: 50%;
+		display: inline-block;
+		border: 3px solid $color-primary-dark;
+		transform: translateY(25%);
+		margin-right: 3px;
+		padding: 3px;
+		transition: all .15s;
+	}
+	&__radio-input:checked ~ &__radio-label &__radio-button {
+		background-color: $color-primary-dark !important;
+	}
+
+	button {
+		display: block;
+	}
+}

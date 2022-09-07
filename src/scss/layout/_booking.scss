@@ -1,0 +1,43 @@
+.section-bookings {
+	padding: 15rem 0;
+	background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+	overflow: hidden;
+}
+
+.book {
+	background-image:  linear-gradient(105deg, 
+		rgba($colorwhite, .9) 0% ,
+		rgba($colorwhite, .9) 50% ,
+		transparent 50%),
+		url('./../../public/img/nat-10.jpg');
+	background-size: cover;
+	border-radius: 3px;
+	box-shadow: 0 1.5rem 4rem rgba($darkblack, .2);
+
+	@include respond(tap-land) {
+		background-image:  linear-gradient(105deg, 
+		rgba($colorwhite, .9) 0% ,
+		rgba($colorwhite, .9) 70% ,
+		transparent 70%),
+		url('./../../public/img/nat-10.jpg');
+	}
+
+	@include respond(tap-port) {
+		background-image:  linear-gradient(to right, 
+		rgba($colorwhite, .9) 0% ,
+		rgba($colorwhite, .9) 100%),
+		url('./../../public/img/nat-10.jpg');
+	}
+
+	&__form {
+		width: 50%;
+		padding: 6rem;
+		@include respond(tap-land) {
+			width: 70%;
+			padding: 3rem;
+		}
+		@include respond(tap-port) {
+			width: 100%;
+		}
+	}
+}

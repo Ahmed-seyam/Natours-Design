@@ -1,0 +1,53 @@
+@import 'vendors/icon-fonts.css';
+
+@import 'abstracts/mixins.scss';
+@import 'abstracts/functions.scss';
+@import 'abstracts/vars.scss';
+
+@import 'base/base.scss';
+@import 'base/_animations.scss';
+@import 'base/_typography.scss';
+@import 'base/_utilities.scss';
+
+@import 'layout/_grid.scss';
+
+@import 'components/_buttons.scss';
+@import 'components/features-box.scss';
+@import 'components/story.scss';
+@import 'components/_compostion.scss';
+@import 'components/card.scss';
+@import 'components/bg-video.scss';
+@import 'components/form.scss';
+@import 'components/popup.scss';
+
+@import 'layout/header.scss';
+@import 'layout/about.scss';
+@import 'layout/features.scss';
+@import 'layout/tour.scss';
+@import 'layout/stories.scss';
+@import 'layout/booking.scss';
+@import 'layout/footer.scss';
+@import 'layout/navigation.scss';
+
+
+/*
+	@mixin name ($color) {
+		color: $color;
+	}
+
+	.btn {
+		@include name (#fff);
+	}
+
+	@function funName($a, $b) {
+		return $a * $b;
+	}
+
+	%background {
+		color: #fff;
+	}
+
+	.back {
+		@extend %background;
+	}
+*/

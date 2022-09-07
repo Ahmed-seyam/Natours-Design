@@ -1,0 +1,30 @@
+.feature-box {
+	background-color: rgba($colorwhite, .8);
+	text-align: center;
+	font-size: 1.5rem;
+	padding: 2.5rem;
+	border-radius: .3rem;
+	box-shadow: 0 1.5rem 4rem rgba($darkblack, .15);
+	transition: transform .3s ease-in-out;
+	@include respond(tap-port) {
+		padding: 2rem;
+		
+	}
+	&:hover {
+		transform: translateY(-1.5rem) scale(1.03);
+	}
+	&__icon {
+		font-size: 6rem !important;
+		margin-bottom: 1.5rem;
+		background-image: linear-gradient(to right, $mediumgreen, $darkgreen);
+		display: inline-block;
+		background-clip: text;
+		color: transparent;
+		@include respond(tap-port) {
+			margin: 0;
+		}	
+	}
+	&__text {
+		text-align: justify;
+	}
+}
